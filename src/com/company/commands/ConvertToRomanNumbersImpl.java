@@ -5,8 +5,9 @@ import com.company.io.Write;
 
 import java.io.IOException;
 
-public class ConvertToRomanNumbersImpl implements ConvertToRomanNumbers {
+public class ConvertToRomanNumbersImpl implements Convert {
     private static final String ENTER_NUMBER = "Enter number between 1 and 3999";
+    private static final String ERROR_MESSAGE = "The value is not correct!!!";
     private static final Integer UPPER_BOUND = 3999;
     private static final Integer THOUSAND = 1000;
     private static final Integer HOUNDRED = 100;
@@ -31,7 +32,7 @@ public class ConvertToRomanNumbersImpl implements ConvertToRomanNumbers {
         this.write.write(ENTER_NUMBER);
         int numberToConvert = Integer.parseInt(this.reader.read());
         if (numberToConvert < 1 || numberToConvert > UPPER_BOUND) {
-            this.write.write("The count of value is not correct!!!");
+            this.write.write(ERROR_MESSAGE);
             return;
         }
         this.stringBuilder.append(numberToConvert + " -> ");

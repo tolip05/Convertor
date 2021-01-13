@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.commands.ConvertToRomanNumbers;
+import com.company.commands.Convert;
 import com.company.commands.ConvertToRomanNumbersImpl;
 import com.company.io.ConsoleReader;
 import com.company.io.ConsoleWriter;
@@ -14,8 +14,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Write write = new ConsoleWriter();
         Reader reader = new ConsoleReader();
-        ConvertToRomanNumbers convertToRomanNumbers =
+        Convert convert =
                 new ConvertToRomanNumbersImpl(write,reader);
-        convertToRomanNumbers.convert();
+        Context context = new Context(convert);
+        context.execute();
     }
 }
